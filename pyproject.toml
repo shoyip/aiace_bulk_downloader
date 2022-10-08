@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "bulk-downloader"
+version = "0.1.0"
+description = "This package leverages Selenium's scraping techinuqes to bulk download datasets from Meta Data for Good"
+authors = ["Shoichi Yip <shoichi.yip@gmail.com>"]
+readme = "README.md"
+packages = [{include = "bulk_downloader"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.5.0"
+python-dotenv = "^0.21.0"
+selenium = "^4.5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
