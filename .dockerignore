@@ -3,8 +3,13 @@ __pycache__
 *.pyo
 *.pyd
 .Python
+.env
+.dockerenv
 env/
 venv/
+.venv/
+.gitignore
+data/
 pip-log.txt
 pip-delete-this-directory.txt
 .tox/

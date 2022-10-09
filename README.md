@@ -28,7 +28,7 @@ The script has been verified to work on 2022-10-09.
 Before running the script, you should prepare a file containing the required
 environment variables.
 
-```
+```bash
 # .env
 FBDFG_PID={facebook data for good partner id}
 FBDFG_USER={facebook username / email}
@@ -48,9 +48,14 @@ the permissions in the correct manner.
 
 The main dependencies of this package are `selenium`, `pandas` and `python-dotenv`.
 
+Also, `geckodriver` should be in the PATH and Firefox should also be installed.
+If this is not the case, the packages can be installed by running the
+`install_geckodriver.sh` Bash script. This script should work on Debian and
+Ubuntu based Linux distros.
+
 In order to get the proper packages ready for use issue the following command.
 
-```
+```console
 poetry install
 ```
 
@@ -58,7 +63,7 @@ poetry install
 
 The script can be executed by issuing the following command.
 
-```
+```console
 python main.py
 ```
 
@@ -70,7 +75,27 @@ Be warned that **the datasets** specified in the script (i.e. *Italy Coronavirus
 Disease Prevention Map Feb 24 2020 Id*) **are discontinued and are soon going to be
 dismissed from the platform**.
 
-# Impressum
+## Using Docker
+
+The image can be built by issuing the following command.
+
+```console
+docker build -t bulk_downloader
+```
+
+Once the image is built, the Bulk Downloader tool can be run as follows.
+
+```console
+docker run -v [host data folder]:/app/data --env-file .env -i -t bulk_downloader
+```
+
+where the *host data folder* has to be an absolute path pointing to the directory
+of the host machine where we would like the data to be downloaded.
+
+The `.env` file should contain the informations as pointed out previously.
+`DOWNLOAD_FOLDER` should be set to `/app/data`.
+
+## Impressum
 
 Shoichi Yip // 2022
 
