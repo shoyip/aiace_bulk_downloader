@@ -61,10 +61,16 @@ poetry install
 
 ## Execution
 
+Activate the environment by issuing the following command.
+
+```console
+$ source "$( poetry env list --full-path | grep Activated | cut -d' ' -f1 )/bin/activate"
+```
+
 The script can be executed by issuing the following command.
 
 ```console
-python main.py
+(bulk_download_env) $ python main.py
 ```
 
 The user will be guided through the choice of the datasets, mainly the choice
@@ -77,16 +83,35 @@ dismissed from the platform**.
 
 ## Using Docker
 
+### Pulling the image and running
+
+The image can be pulled from the Github Containers Repository.
+
+```console
+$ docker pull ghcr.io/shoyip/aiace_bulk_downloader
+```
+
+Then it can be run as follows.
+
+```console
+$ docker run -v [host data folder]:/app/data --env-file .env -i -t ghcr.io/shoyip/aiace_bulk_downloader
+```
+
+where the *host data folder* has to be an absolute path pointing to the directory
+of the host machine where we would like the data to be downloaded.
+
+### Building and running the image
+
 The image can be built by issuing the following command.
 
 ```console
-docker build -t bulk_downloader
+$ docker build -t bulk_downloader
 ```
 
 Once the image is built, the Bulk Downloader tool can be run as follows.
 
 ```console
-docker run -v [host data folder]:/app/data --env-file .env -i -t bulk_downloader
+$ docker run -v [host data folder]:/app/data --env-file .env -i -t bulk_downloader
 ```
 
 where the *host data folder* has to be an absolute path pointing to the directory
