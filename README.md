@@ -1,9 +1,9 @@
 # Meta Data for Good - Bulk Downloader
 
-Meta (formerly Facebook) offers academic partners many useful datasets about
-crises around the world. In particular, Meta has been offering important datasets
-about the COVID-19 crisis. The following datasets were of interest to our
-research purposes:
+**Meta** (formerly Facebook) **Data for Good** offers academic partners many
+useful datasets about crises around the world. In particular, Meta has been
+offering important datasets about the COVID-19 crisis. The following datasets
+were of interest to our research purposes:
 
 - Facebook Population (Administrative Regions) v1
 - Facebook Population (Tile Level) v1
@@ -22,6 +22,27 @@ defined in the toolkit are being used in a script that guides the user through
 the bulk download of datasets (`main.py`).
 
 The script has been verified to work on 2022-10-09.
+
+## Configuration
+
+Before running the script, you should prepare a file containing the required
+environment variables.
+
+```
+# .env
+FBDFG_PID={facebook data for good partner id}
+FBDFG_USER={facebook username / email}
+FBDFG_PASS={facebook password}
+DOWNLOAD_FOLDER={folder where files should be downloaded}
+```
+
+- The partner ID is a 15 digit number.
+- The download folder will then be populated with a folder called as the search
+term (i.e. *Italy Coronavirus Disease Prevention Map Feb 24 2020 Id*) and a
+subfolder for each dataset type (i.e. *[Discontinued] Facebook Population
+(Administrative Regions) v1*).
+- You should NEVER share the `.env` file with other people and should also set
+the permissions in the correct manner.
 
 ## Installation
 

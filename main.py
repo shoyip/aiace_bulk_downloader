@@ -15,7 +15,7 @@ import os
 from pathlib import Path
 from time import time
 from dotenv import load_dotenv, find_dotenv
-from bulk_downloader.bulk_downloader import Dataset
+from bulk_downloader import Dataset
 
 # find .env file and load the environment variables
 load_dotenv(find_dotenv())
