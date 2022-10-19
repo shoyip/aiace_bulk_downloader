@@ -64,7 +64,7 @@ def main():
         print("Please enter a valid option.")
         exit()
 
-    dest_folder = Path(download_folder) / search_term / dataset_type
+    dest_folder = Path(download_folder) / "raw" / search_term / dataset_type
     dest_folder.mkdir(parents=True, exist_ok=True)
 
     # Let us define the Dataset object for the dataset that we want to scrape
